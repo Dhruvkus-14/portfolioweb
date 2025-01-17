@@ -7,7 +7,7 @@ import { scrollToSection } from '../utils/scrollUtils';
 const Hero = () => {
   const handleResumeDownload = () => {
     const link = document.createElement('a');
-    link.href = './src/assets/Dhruv_Kushwaha_Resume.pdf'; // Replace with the correct path
+    link.href = '/assets/Dhruv_Kushwaha_Resume.pdf'; // Replace with the correct path
     link.download = 'Dhruv_Kushwaha_Resume.pdf';
     link.click();
   };
@@ -62,7 +62,7 @@ const Hero = () => {
 
         <div className="w-64 h-64 md:w-80 md:h-80 relative">
           <img
-            src="./src/assets/picture.png" // Replace with your correct path
+            src="/assets/picture.png" // Replace with your correct path
             alt="Dhruv Kushwaha"
             className="rounded-full w-full h-full object-cover border-4 border-white shadow-lg"
           />

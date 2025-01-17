@@ -3,18 +3,18 @@ import { motion } from 'framer-motion';
 
 const About = () => {
   const milestones = [
-    { tech: 'HTML', imageUrl: './src/assets/html.png' },
-    { tech: 'CSS', imageUrl: './src/assets/css.png' },
-    { tech: 'JavaScript', imageUrl: './src/assets/javascript.png' },
-    { tech: 'ReactJS', imageUrl: './src/assets/react.png' },
-    { tech: 'TailwindCSS', imageUrl: './src/assets/tailwind.png' },
-    { tech: 'Firebase', imageUrl: './src/assets/firebase.png' },
-    { tech: 'Supabase', imageUrl: './src/assets/supabase.png' },
-    { tech: 'MongoDB', imageUrl: './src/assets/mongodb.png' },
-    { tech: 'NextJS', imageUrl: './src/assets/nextjs.png' },
-    { tech: 'NodeJS', imageUrl: './src/assets/nodejs.png' },
-    { tech: 'ExpressJS', imageUrl: './src/assets/expressjs.png' },
-    { tech: 'EmailJS', imageUrl: './src/assets/emailjs.png' },
+    { tech: 'HTML', imageUrl: '/assets/html.png' },
+    { tech: 'CSS', imageUrl: '/assets/css.png' },
+    { tech: 'JavaScript', imageUrl: '/assets/javascript.png' },
+    { tech: 'ReactJS', imageUrl: '/assets/react.png' },
+    { tech: 'TailwindCSS', imageUrl: '/assets/tailwind.png' },
+    { tech: 'Firebase', imageUrl: '/assets/firebase.png' },
+    { tech: 'Supabase', imageUrl: '/assets/supabase.png' },
+    { tech: 'MongoDB', imageUrl: '/assets/mongodb.png' },
+    { tech: 'NextJS', imageUrl: '/assets/nextjs.png' },
+    { tech: 'NodeJS', imageUrl: '/assets/nodejs.png' },
+    { tech: 'ExpressJS', imageUrl: '/assets/expressjs.png' },
+    { tech: 'EmailJS', imageUrl: '/assets/emailjs.png' },
   ];
 
   return (
