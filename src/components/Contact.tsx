@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
+import { motion, useAnimation } from 'framer-motion';
 import emailjs from 'emailjs-com';
-import { Send, CheckCircle, AlertCircle } from 'lucide-react';
+import { Send, CheckCircle, AlertCircle, Mail } from 'lucide-react';
+import { useInView } from 'react-intersection-observer';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -12,6 +13,25 @@ const Contact = () => {
   });
   const [isLoading, setIsLoading] = useState(false);
   const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [currentTime, setCurrentTime] = useState('');
+
+  const controls = useAnimation();
+  const { ref, inView } = useInView({ triggerOnce: true });
+
+  useEffect(() => {
+    const updateClock = () => {
+      const now = new Date();
+      setCurrentTime(now.toLocaleTimeString());
+    };
+    const timer = setInterval(updateClock, 1000);
+    return () => clearInterval(timer);
+  }, []);
+
+  useEffect(() => {
+    if (inView) {
+      controls.start('visible');
+    }
+  }, [controls, inView]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -22,7 +42,6 @@ const Contact = () => {
     setIsLoading(true);
 
     try {
-      // Replace with your EmailJS service ID, template ID, and user ID
       await emailjs.send(
         'service_3izxbtb',
         'template_q6vu9vi',
@@ -42,7 +61,20 @@ const Contact = () => {
   return (
     <section id="contact" className="py-20 bg-white">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl font-bold text-center text-gray-900 mb-12">Get in Touch</h2>
+        <motion.div
+          ref={ref}
+          initial="hidden"
+          animate={controls}
+          variants={{
+            hidden: { opacity: 0, x: -50 },
+            visible: { opacity: 1, x: 0 },
+          }}
+          transition={{ duration: 0.6 }}
+          className="text-4xl font-bold text-center text-gray-900 mb-12 flex items-center justify-center"
+        >
+          <Mail className="h-8 w-8 mr-2" />
+          Get in Touch
+        </motion.div>
 
         <motion.form
           initial={{ opacity: 0, y: 20 }}
@@ -156,6 +188,19 @@ const Contact = () => {
             )}
           </div>
         </motion.form>
+
+        <div className="mt-12 text-center text-gray-800">
+          <div className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white rounded-lg py-4 shadow-lg">
+            <p className="text-lg font-semibold">🌟 Current Time: <span className="font-bold">{currentTime}</span></p>
+          </div>
+          <p className="mt-4 text-sm text-gray-600">
+            <span className="text-gray-900 font-medium">
+              &copy; {new Date().getFullYear()} All rights reserved.
+            </span>
+            <br />
+            Made with ❤️ by <span className="text-indigo-600 font-bold">Dhruv Kushwaha</span>.
+          </p>
+        </div>
       </div>
     </section>
   );
