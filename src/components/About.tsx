@@ -9,7 +9,7 @@ const milestones = [
   { tech: 'TailwindCSS', imageUrl: '/assets/tailwind.png' },
   { tech: 'Firebase', imageUrl: '/assets/firebase.png' },
   { tech: 'Supabase', imageUrl: '/assets/supabase.png' },
-  { tech: 'MongoDB', imageUrl: '/assets/mongodb.png' },
+  { tech: 'MongoDB', imageUrl: '/assets/Mongodb.png' },
   { tech: 'NextJS', imageUrl: '/assets/nextjs.png' },
   { tech: 'NodeJS', imageUrl: '/assets/nodejs.png' },
   { tech: 'ExpressJS', imageUrl: '/assets/expressjs.png' },
