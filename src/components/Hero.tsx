@@ -24,9 +24,7 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h3 className="text-2xl font-bold text-gray-600 mb-8">
-              Hi, I am
-            </h3>
+            <h3 className="text-2xl font-bold text-gray-600 mb-8">Hi, I am</h3>
             <h1 className="text-6xl font-bold mb-6">
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600">
                 Dhruv Kushwaha
@@ -34,11 +32,7 @@ const Hero = () => {
             </h1>
             <h2 className="text-2xl font-medium text-gray-700 mb-6">
               <Typewriter
-                words={[
-                  'Web Developer',
-                  'Software Engineer',
-                  'Tech Enthusiast',
-                ]}
+                words={['Web Developer', 'Software Engineer', 'Tech Enthusiast']}
                 loop={true}
                 cursor
                 cursorStyle="|"
@@ -49,7 +43,7 @@ const Hero = () => {
             </h2>
 
             <p className="text-lg text-gray-500 max-w-2xl mb-8">
-            Full Stack Developer based in India
+              Full Stack Developer based in India
             </p>
             <button
               onClick={handleResumeDownload}
@@ -60,12 +54,15 @@ const Hero = () => {
           </motion.div>
         </div>
 
-        <div className="w-64 h-64 md:w-80 md:h-80 relative">
-          <img
-            src="/assets/picture.png" // Replace with your correct path
-            alt="Dhruv Kushwaha"
-            className="rounded-full w-full h-full object-cover border-4 border-white shadow-lg"
-          />
+        {/* Updated image with an interesting border */}
+        <div className="relative w-64 h-64 md:w-80 md:h-80">
+          <div className="absolute inset-0 bg-gradient-to-r from-indigo-600 via-purple-500 to-pink-500 rounded-full p-1 animate-border">
+            <img
+              src="/assets/picture.png" // Replace with your correct path
+              alt="Dhruv Kushwaha"
+              className="w-full h-full rounded-full object-cover border-4 border-white"
+            />
+          </div>
         </div>
       </div>
 
@@ -79,6 +76,24 @@ const Hero = () => {
       >
         <ChevronDown className="h-8 w-8 animate-bounce" />
       </motion.button>
+
+      <style jsx>{`
+        .animate-border {
+          animation: gradient-border 3s linear infinite;
+        }
+
+        @keyframes gradient-border {
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
+        }
+      `}</style>
     </section>
   );
 };

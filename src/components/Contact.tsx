@@ -95,6 +95,7 @@ const Contact = () => {
               minLength={2}
               value={formData.name}
               onChange={handleChange}
+              placeholder="Enter your name"
               className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
             />
           </div>
@@ -111,6 +112,7 @@ const Contact = () => {
               pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
               value={formData.email}
               onChange={handleChange}
+              placeholder="Enter your email address"
               className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
             />
           </div>
@@ -127,6 +129,7 @@ const Contact = () => {
               minLength={5}
               value={formData.subject}
               onChange={handleChange}
+              placeholder="Enter the subject"
               className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
             />
           </div>
@@ -143,6 +146,7 @@ const Contact = () => {
               rows={4}
               value={formData.message}
               onChange={handleChange}
+              placeholder="Write your message here"
               className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500"
             />
           </div>
