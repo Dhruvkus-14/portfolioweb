@@ -7,8 +7,8 @@ import { scrollToSection } from '../utils/scrollUtils';
 const Hero = () => {
   const handleResumeDownload = () => {
     const link = document.createElement('a');
-    link.href = '/assets/Dhruv_Kushwaha_Resume.pdf'; // Replace with the correct path
-    link.download = 'Dhruv_Kushwaha_Resume.pdf';
+    link.href = '/assets/Dhruv_resume_new_updaed.pdf'; 
+    link.download = 'Dhruv_resume_new_updaed.pdf';
     link.click();
   };
 

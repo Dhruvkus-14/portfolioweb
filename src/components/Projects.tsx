@@ -3,6 +3,14 @@ import { motion } from 'framer-motion';
 
 const projects = [
   {
+    title: 'Open-Write ',
+    description: 'Full-Stack (Node.js, Express, MongoDB, EJS, JWT Authentication) A full-stack social blogging platform where Users can create and manage posts with real-time interactions and secure authentication and Global Feed and Engagement: Users can create posts, like, comment, and interact with other users’ content in a dynamic global feed',
+    imageUrl: '/assets/openwrite.jpg',
+    demoUrl: 'https://openwrite.onrender.com/',
+    githubUrl: 'https://github.com/Dhruvkus-14/backend',
+  },
+  
+  {
     title: 'Creative-Slate',
     description: '   A highly interactive whiteboard web application used for brainstorming, planning projects, and creating diagram for personal tasks or whether you are teaching .This app simplifies your workflow and help you stay organized Boost Productivity:  includes handy tools like calculator, to-do-list , stopwatch, and a clock for efficient time and task  management.',
     imageUrl: '/assets/project1.png',
